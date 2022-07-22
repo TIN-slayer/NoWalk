@@ -1136,14 +1136,6 @@ PrefabInstance:
       propertyPath: spriteD
       value: 
       objectReference: {fileID: 354507077}
-    - target: {fileID: 6352054786363580061, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
-      propertyPath: waitDistTime
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352054786363580061, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
-      propertyPath: distFirstStart
-      value: 0.97
-      objectReference: {fileID: 0}
     - target: {fileID: 7653137291790448626, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
       propertyPath: flag
       value: 

@@ -226,7 +226,7 @@ public class PlayerController : MonoBehaviour
                 }
                 rb.MovePosition(rb.position + direction * maxSpeed * Time.fixedDeltaTime);
             }
-            else if (Input.GetKey("d") & existD & waitDistD)
+            else if (Input.GetKey("d") & existD)
             {
                 direction = (pointD - pos).normalized;
                 if (Vector2.Distance(pos, pointD) <= distFirstStart)

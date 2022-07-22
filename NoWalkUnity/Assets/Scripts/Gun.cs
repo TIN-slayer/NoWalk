@@ -21,6 +21,8 @@ public class Gun : MonoBehaviour
     public float speedBull;
     public bool bulAcool = true;
     public bool bulDcool = true;
+    public bool allBulletsCooldown = true;
+
     private float timeBtwShots;
     public float startTimeBtwShots;
 
@@ -36,10 +38,14 @@ public class Gun : MonoBehaviour
         line.SetUpLine(points);
         if (timeBtwShots <= 0)
         {
-            if (Input.GetKey("a") & Input.GetMouseButtonDown(0) & bulAcool)
+            if (Input.GetKey("a") & Input.GetMouseButtonDown(0) & bulAcool & allBulletsCooldown)
             {
                 bulAcool = false;
+                allBulletsCooldown = false;
+                //player.GetComponent<PlayerController>().waitDistA = false;
+                StartCoroutine(Cooldown(3, 0.1f));
                 StartCoroutine(Cooldown(1, cooldown));
+                //StartCoroutine(Cooldown(4, player.GetComponent<PlayerController>().waitDistTime));
                 gamer.GetComponent<PlayerController>().existA = true;
                 points[1] = bulletA.transform;
                 timeBtwShots = startTimeBtwShots;
@@ -50,10 +56,14 @@ public class Gun : MonoBehaviour
                 bulletA.GetComponent<BulletA>().rb.velocity = bulletA.transform.right * speedBull;
                 //BulletA.rb.velocity = bulletA.transform.right * speedBull;
             }
-            if (Input.GetKey("d") & Input.GetMouseButtonDown(0) & bulDcool)
+            if (Input.GetKey("d") & Input.GetMouseButtonDown(0) & bulDcool & allBulletsCooldown)
             {
                 bulDcool = false;
+                allBulletsCooldown = false;
+                //player.GetComponent<PlayerController>().waitDistD = false;
+                StartCoroutine(Cooldown(3, 0.1f));
                 StartCoroutine(Cooldown(2, cooldown));
+                //StartCoroutine(Cooldown(5, player.GetComponent<PlayerController>().waitDistTime));
                 gamer.GetComponent<PlayerController>().existD = true;
                 points[3] = bulletD.transform;
                 timeBtwShots = startTimeBtwShots;
@@ -84,6 +94,21 @@ public class Gun : MonoBehaviour
             fillD.GetComponent<Cooldown>().StartCounter();
             yield return new WaitForSeconds(time);
             bulDcool = true;
+        }
+        else if (tip == 3)
+        {
+            yield return new WaitForSeconds(time);
+            allBulletsCooldown = true;
+        }
+        else if (tip == 4)
+        {
+            yield return new WaitForSeconds(time);
+            player.GetComponent<PlayerController>().waitDistA = true;
+        }
+        else if (tip == 5)
+        {
+            yield return new WaitForSeconds(time);
+            player.GetComponent<PlayerController>().waitDistD = true;
         }
     }
 }

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float slowSpeed;
     public float distEnd;
     public float distStart;
+    public float distFirstStart;
     private List<GameObject> killedEnemiesA = new List<GameObject>();
     private List<GameObject> killedEnemiesD = new List<GameObject>();
     public GameObject gun;
@@ -42,6 +43,9 @@ public class PlayerController : MonoBehaviour
     public bool bulDcol;
     private bool booldistA = false;
     private bool booldistD = false;
+    public float waitDistTime;
+    public bool waitDistA = true;  // joke
+    public bool waitDistD = true;  // joke
     void Start()
     {
         maxSpeed = constMaxSpeed;
@@ -112,10 +116,10 @@ public class PlayerController : MonoBehaviour
             booldistD = Vector2.Distance(pos1, killedEnemiesD[0].transform.position) <= distD;
         bulAcol = bulletA.GetComponent<BulletA>().bulAcol;
         bulDcol = bulletD.GetComponent<BulletD>().bulDcol;
-        if (Input.GetMouseButtonDown(1))
-        {
-            print(Input.GetKey("a") & existA & killA);
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    print(Input.GetKey("a") & existA & killA);
+        //}
         if (Input.GetMouseButtonDown(1) & Input.GetKey("a") & existA & killA & !bulAcol & gun.GetComponent<Gun>().bulAcool & booldistA)
         {
             //spaceAcool = false;
@@ -212,29 +216,29 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKey("a") & existA)
             {
                 direction = (pointA - pos).normalized;
-                if (!minCheckA)
+                if (Vector2.Distance(pos, pointA) <= distFirstStart)
+                {
+                    maxSpeed = 0.1f;
+                }
+                else if (!minCheckA)
                 {
                     maxSpeed = gun.GetComponent<Gun>().speedBull;
                 }
                 rb.MovePosition(rb.position + direction * maxSpeed * Time.fixedDeltaTime);
             }
-            else if (Input.GetKey("d") & existD)
+            else if (Input.GetKey("d") & existD & waitDistD)
             {
                 direction = (pointD - pos).normalized;
-                if (!minCheckD)
+                if (Vector2.Distance(pos, pointD) <= distFirstStart)
+                {
+                    maxSpeed = 0.1f;
+                }
+                else if (!minCheckD)
                 {
                     maxSpeed = gun.GetComponent<Gun>().speedBull;
                 }
                 rb.MovePosition(rb.position + direction * maxSpeed * Time.fixedDeltaTime);
             }
-            /*
-            else if (!minCheckA || !minCheckD)
-            {
-                maxSpeed = gun.GetComponent<Gun>().speedBull;
-                rb.MovePosition(rb.position + direction * maxSpeed * Time.fixedDeltaTime);
-                //StartCoroutine(Cooldown(3, shtraf));
-            }
-            */
             else
             {
                 rb.MovePosition(rb.position + direction * slowSpeed * Time.fixedDeltaTime);

@@ -1129,14 +1129,6 @@ PrefabInstance:
       propertyPath: apples
       value: 
       objectReference: {fileID: 1580695646448490187}
-    - target: {fileID: 33372849244914011, guid: f9d19ef0cd4ce7b46b236db4bfe32970, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -74.22998
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325602793455692827, guid: f9d19ef0cd4ce7b46b236db4bfe32970, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 74.29999
-      objectReference: {fileID: 0}
     - target: {fileID: 5894858006750432070, guid: f9d19ef0cd4ce7b46b236db4bfe32970, type: 3}
       propertyPath: m_Name
       value: FinCamera

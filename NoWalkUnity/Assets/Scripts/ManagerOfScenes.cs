@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class ManagerOfScenes
+
+public class ManagerOfScenes : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static void Load(int scene)
     {
-        SceneManager.LoadSceneAsync(scene);
+        print(scene);
+        SceneManager.LoadSceneAsync(scene);        
     }
 
 }

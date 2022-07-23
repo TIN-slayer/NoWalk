@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ManagerOfScenes.Load(0);
+            ManagerOfScenes.Load(SceneManager.sceneCountInBuildSettings - 1);
         }
         else if (collision.CompareTag("BulletA"))
         {

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LOSE.unity
-    guid: 6b89cd0a8f8d1474e96fa795a1e2bcb2
+    path: Assets/Scenes/START.unity
+    guid: 619f10d4684d77c458620ceeae95915c
   - enabled: 1
     path: Assets/Scenes/1_level.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WIN.unity
     guid: 5a52455107ef77a40802b12ac90cca39
+  - enabled: 1
+    path: Assets/Scenes/LOSE.unity
+    guid: 6b89cd0a8f8d1474e96fa795a1e2bcb2
   m_configObjects: {}

@@ -28,5 +28,6 @@ public class LevelScores : MonoBehaviour
             }
         }
         this.GetComponent<Text>().text = ans;
+        Score.levelScores = new List<string>();
     }
 }

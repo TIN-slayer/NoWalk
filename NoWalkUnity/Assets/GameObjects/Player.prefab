@@ -347,7 +347,7 @@ MonoBehaviour:
   shotPoint: {fileID: 6352054785140656696}
   fillA: {fileID: 0}
   fillD: {fileID: 0}
-  cooldown: 3
+  cooldown: 2
   speedBull: 2.5
   bulAcool: 1
   bulDcool: 1

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         spriteD.GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    void Update()
+    public int Kill()
     {
         //print(transform.GetChild(1).GetComponent<Gun>().bulAcool);
         Vector2 pos1 = this.transform.position;
@@ -71,11 +71,6 @@ public class PlayerController : MonoBehaviour
         booldistA = false;
         booldistD = false;
         RaycastHit2D[] hitsA = Physics2D.RaycastAll(this.transform.position, directionA, mask);
-        if (Input.GetMouseButtonDown(1))
-        {
-            print("bag1");
-            print(hitsA.Length);
-        }
         if (hitsA.Length > 0) //bag (вроде исправил) когда т€нусь к двум пул€м, то рейкаст не находит пересечений вообще (¬ нормальном случае нашЄл 2 пересечни€, хот€ это странно)
         {
             for (int i = 0; i < hitsA.Length; i++)
@@ -120,7 +115,7 @@ public class PlayerController : MonoBehaviour
         //{
         //    print(Input.GetKey("a") & existA & killA);
         //}
-        if (Input.GetMouseButtonDown(1) & Input.GetKey("a") & existA & killA & !bulAcol & gun.GetComponent<Gun>().bulAcool & booldistA)
+        if (Input.GetMouseButtonDown(0) & Input.GetKey("a") & existA & killA & !bulAcol & gun.GetComponent<Gun>().bulAcool & booldistA)
         {
             //spaceAcool = false;
             //StartCoroutine(Cooldown(1, cooldown));
@@ -138,8 +133,11 @@ public class PlayerController : MonoBehaviour
                     Destroy(killedEnemiesA[i]);
                 }
             }
+            killA = false;
+            killD = false;
+            return (1);
         }
-        if (Input.GetMouseButtonDown(1) & Input.GetKey("d") & existD & killD & !bulDcol & gun.GetComponent<Gun>().bulDcool & booldistD)
+        if (Input.GetMouseButtonDown(0) & Input.GetKey("d") & existD & killD & !bulDcol & gun.GetComponent<Gun>().bulDcool & booldistD)
         {
             //spaceDcool = false;
             //StartCoroutine(Cooldown(2, cooldown));
@@ -157,9 +155,13 @@ public class PlayerController : MonoBehaviour
                     Destroy(killedEnemiesD[i]);
                 }
             }
+            killA = false;
+            killD = false;
+            return (2);
         }
         killA = false;
         killD = false;
+        return (0);
     }
     void FixedUpdate()
     {

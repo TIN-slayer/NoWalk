@@ -40,37 +40,43 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetKey("a") & Input.GetMouseButtonDown(0) & bulAcool & allBulletsCooldown)
             {
-                bulAcool = false;
-                allBulletsCooldown = false;
-                player.GetComponent<PlayerController>().waitDistA = false;
-                StartCoroutine(Cooldown(3, 0.1f));
-                StartCoroutine(Cooldown(1, cooldown));
-                StartCoroutine(Cooldown(4, player.GetComponent<PlayerController>().waitDistTime));
-                gamer.GetComponent<PlayerController>().existA = true;
-                points[1] = bulletA.transform;
-                timeBtwShots = startTimeBtwShots;
-                bulletA.transform.rotation = this.transform.rotation;
-                bulletA.transform.position = shotPoint.position;
-                spriteA.GetComponent<SpriteRenderer>().enabled = true;
-                spriteA.transform.rotation = Quaternion.Euler(bulletA.transform.rotation.x, bulletA.transform.rotation.y, -bulletA.transform.rotation.z);
-                bulletA.GetComponent<BulletA>().rb.velocity = bulletA.transform.right * speedBull;
+                if (gamer.GetComponent<PlayerController>().Kill() != 1)
+                {
+                    bulAcool = false;
+                    allBulletsCooldown = false;
+                    player.GetComponent<PlayerController>().waitDistA = false;
+                    StartCoroutine(Cooldown(3, 0.1f));
+                    StartCoroutine(Cooldown(1, cooldown));
+                    StartCoroutine(Cooldown(4, player.GetComponent<PlayerController>().waitDistTime));
+                    gamer.GetComponent<PlayerController>().existA = true;
+                    points[1] = bulletA.transform;
+                    timeBtwShots = startTimeBtwShots;
+                    bulletA.transform.rotation = this.transform.rotation;
+                    bulletA.transform.position = shotPoint.position;
+                    spriteA.GetComponent<SpriteRenderer>().enabled = true;
+                    spriteA.transform.rotation = Quaternion.Euler(bulletA.transform.rotation.x, bulletA.transform.rotation.y, -bulletA.transform.rotation.z);
+                    bulletA.GetComponent<BulletA>().rb.velocity = bulletA.transform.right * speedBull;
+                }                
             }
             if (Input.GetKey("d") & Input.GetMouseButtonDown(0) & bulDcool & allBulletsCooldown)
             {
-                bulDcool = false;
-                allBulletsCooldown = false;
-                player.GetComponent<PlayerController>().waitDistD = false;
-                StartCoroutine(Cooldown(3, 0.1f));
-                StartCoroutine(Cooldown(2, cooldown));
-                StartCoroutine(Cooldown(5, player.GetComponent<PlayerController>().waitDistTime));
-                gamer.GetComponent<PlayerController>().existD = true;
-                points[3] = bulletD.transform;
-                timeBtwShots = startTimeBtwShots;
-                bulletD.transform.rotation = this.transform.rotation;
-                bulletD.transform.position = shotPoint.position;
-                spriteD.GetComponent<SpriteRenderer>().enabled = true;
-                spriteD.transform.rotation = Quaternion.Euler(bulletD.transform.rotation.x, bulletD.transform.rotation.y, -bulletD.transform.rotation.z);
-                bulletD.GetComponent<BulletD>().rb.velocity = bulletD.transform.right * speedBull;
+                if (gamer.GetComponent<PlayerController>().Kill() != 2)
+                {
+                    bulDcool = false;
+                    allBulletsCooldown = false;
+                    player.GetComponent<PlayerController>().waitDistD = false;
+                    StartCoroutine(Cooldown(3, 0.1f));
+                    StartCoroutine(Cooldown(2, cooldown));
+                    StartCoroutine(Cooldown(5, player.GetComponent<PlayerController>().waitDistTime));
+                    gamer.GetComponent<PlayerController>().existD = true;
+                    points[3] = bulletD.transform;
+                    timeBtwShots = startTimeBtwShots;
+                    bulletD.transform.rotation = this.transform.rotation;
+                    bulletD.transform.position = shotPoint.position;
+                    spriteD.GetComponent<SpriteRenderer>().enabled = true;
+                    spriteD.transform.rotation = Quaternion.Euler(bulletD.transform.rotation.x, bulletD.transform.rotation.y, -bulletD.transform.rotation.z);
+                    bulletD.GetComponent<BulletD>().rb.velocity = bulletD.transform.right * speedBull;
+                }               
             }
         }
         else

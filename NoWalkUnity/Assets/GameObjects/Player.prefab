@@ -347,8 +347,8 @@ MonoBehaviour:
   shotPoint: {fileID: 6352054785140656696}
   fillA: {fileID: 0}
   fillD: {fileID: 0}
-  cooldown: 2
-  speedBull: 2.5
+  cooldown: 1
+  speedBull: 4
   bulAcool: 1
   bulDcool: 1
   allBulletsCooldown: 1
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constMaxSpeed: 4
-  slowSpeed: 1
+  slowSpeed: 2
   distEnd: 4
   distStart: 1
   distFirstStart: 0.97

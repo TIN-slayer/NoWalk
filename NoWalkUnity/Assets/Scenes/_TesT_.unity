@@ -1072,6 +1072,14 @@ PrefabInstance:
       propertyPath: spriteD
       value: 
       objectReference: {fileID: 354507077}
+    - target: {fileID: 6352054785713592388, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
+      propertyPath: cooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352054785713592388, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
+      propertyPath: speedBull
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6352054786363580054, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1136,6 +1144,10 @@ PrefabInstance:
       propertyPath: spriteD
       value: 
       objectReference: {fileID: 354507077}
+    - target: {fileID: 6352054786363580061, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
+      propertyPath: slowSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7653137291790448626, guid: 3730b94fb1dfc4145a3bd131f830d573, type: 3}
       propertyPath: flag
       value: 
@@ -1565,6 +1577,10 @@ PrefabInstance:
       propertyPath: gun
       value: 
       objectReference: {fileID: 1765897260}
+    - target: {fileID: 8152390454936246305, guid: 77cbaec5d0b093a4fb85af51bfc080f7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23.029999
+      objectReference: {fileID: 0}
     - target: {fileID: 8196069377532351862, guid: 77cbaec5d0b093a4fb85af51bfc080f7, type: 3}
       propertyPath: m_RootOrder
       value: 1

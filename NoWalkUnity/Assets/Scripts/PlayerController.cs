@@ -117,10 +117,8 @@ public class PlayerController : MonoBehaviour
         //}
         if (Input.GetMouseButtonDown(0) & Input.GetKey("a") & existA & killA & !bulAcol & gun.GetComponent<Gun>().bulAcool & booldistA)
         {
-            //spaceAcool = false;
-            //StartCoroutine(Cooldown(1, cooldown));
-            gun.GetComponent<Gun>().bulAcool = false;
-            StartCoroutine(gun.GetComponent<Gun>().Cooldown(1, gun.GetComponent<Gun>().cooldown));
+            //gun.GetComponent<Gun>().bulAcool = false;
+            //StartCoroutine(gun.GetComponent<Gun>().Cooldown(1, gun.GetComponent<Gun>().cooldown));
             transform.position = bulletA.position;
             spriteA.GetComponent<SpriteRenderer>().enabled = false;
             bulletA.GetComponent<BulletA>().rb.velocity = new Vector3(0, 0, 0);
@@ -139,10 +137,8 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) & Input.GetKey("d") & existD & killD & !bulDcol & gun.GetComponent<Gun>().bulDcool & booldistD)
         {
-            //spaceDcool = false;
-            //StartCoroutine(Cooldown(2, cooldown));
-            gun.GetComponent<Gun>().bulDcool = false;
-            StartCoroutine(gun.GetComponent<Gun>().Cooldown(2, gun.GetComponent<Gun>().cooldown));
+            //gun.GetComponent<Gun>().bulDcool = false;
+            //StartCoroutine(gun.GetComponent<Gun>().Cooldown(2, gun.GetComponent<Gun>().cooldown));
             transform.position = bulletD.position;
             spriteD.GetComponent<SpriteRenderer>().enabled = false;
             bulletD.GetComponent<BulletD>().rb.velocity = new Vector3(0, 0, 0);

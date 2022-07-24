@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 102.5, y: -112.57}
+  m_AnchoredPosition: {x: 102.5, y: -112.57001}
   m_SizeDelta: {x: 180.1, y: 205.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445627119
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Top Speedruners:
 
-    1. Android: 75 sec'
+    1. Android: 59 sec'
 --- !u!222 &445627120
 CanvasRenderer:
   m_ObjectHideFlags: 0
